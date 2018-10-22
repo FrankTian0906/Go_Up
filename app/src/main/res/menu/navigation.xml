@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_timer"
+        android:icon="@drawable/ic_timer_black_24dp"
+        android:title="@string/title_timer" />
+
+    <item
+        android:id="@+id/navigation_line"
+        android:icon="@drawable/ic_linechart_black_24dp"
+        android:title="@string/title_linechart" />
+
+    <item
+        android:id="@+id/navigation_pie"
+        android:icon="@drawable/ic_pie_chart_black_24dp"
+        android:title="@string/title_piechart" />
+
+    <item
+        android:id="@+id/navigation_me"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_person" />
+
+</menu>

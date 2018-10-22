@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentLine"
+    android:background="@drawable/login_background">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="400dp"
+        android:layout_below="@+id/imageButton_barChart_left"></com.github.mikephil.charting.charts.BarChart>
+
+    <ImageButton
+        android:layout_marginTop="40dp"
+        android:id="@+id/imageButton_barChart_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_send"
+        android:background="@null"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:layout_marginTop="40dp"
+        android:id="@+id/imageButton_barChart_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:src="@android:drawable/ic_menu_send"/>
+
+    <RadioGroup
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/user_barChart_daily"
+        android:layout_below="@id/barChart">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/user_barChart_daily"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Daily" />
+
+        <RadioButton
+            android:id="@+id/user_barChart_weekly"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Weekly"/>
+
+        <RadioButton
+            android:id="@+id/user_barChart_yearly"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Yearly" />
+        </RelativeLayout>
+    </RadioGroup>
+
+</RelativeLayout>
