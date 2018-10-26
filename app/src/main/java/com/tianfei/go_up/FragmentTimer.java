@@ -1,6 +1,7 @@
 package com.tianfei.go_up;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +13,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -45,6 +47,7 @@ public class FragmentTimer extends Fragment implements TimerView,SensorEventList
     private DecimalFormat df;
     private TimerTask timerTask;
     private Timer timer = new Timer();
+    private AnimationDrawable animationDrawable;
 
     private TimerPresenter timerPresenter;
 
@@ -52,6 +55,7 @@ public class FragmentTimer extends Fragment implements TimerView,SensorEventList
     @BindView(R.id.chronmeter_timeCounter) Chronometer chronometer;
     @BindView(R2.id.button_counter) Button button_counter;
     @BindView(R.id.textview_distance) TextView textView_distance;
+    @BindView(R.id.timer_background) ConstraintLayout constraintLayout;
 
     public static FragmentTimer newInstance() {
         FragmentTimer fragment = new FragmentTimer();
@@ -83,7 +87,28 @@ public class FragmentTimer extends Fragment implements TimerView,SensorEventList
         timerPresenter.bind(this);
 
         unbinder = ButterKnife.bind(this,view);
+        //set animation
+        animationDrawable = (AnimationDrawable)constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(4500);
+        animationDrawable.setExitFadeDuration(4500);
         return view;
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        Log.d(TAG,"The state is onSAVE!");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onPause() {
+        Log.d(TAG,"The state is onPause!");
+        super.onPause();
     }
 
     @Override
@@ -110,11 +135,13 @@ public class FragmentTimer extends Fragment implements TimerView,SensorEventList
                     sensorHandler.sendMessage(message);
                 }
             };
+            animationDrawable.start();
             timer.schedule(timerTask, 1000, 5000);
         }
         else {
             button_counter.setText("START");
             chronometer.stop();
+            animationDrawable.stop();
             timerTask.cancel();
         }
     }

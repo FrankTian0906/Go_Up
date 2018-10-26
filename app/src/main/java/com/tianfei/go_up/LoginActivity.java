@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -48,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @BindView(R2.id.login_form) View mLoginFormView;
     @BindView(R2.id.login_progress) View mProgressView;
     @BindView(R2.id.remember_checkbox) CheckBox mRememberCheckBox;
+    @BindView(R2.id.updatePassword_button) Button updatapasswordBuuton;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -135,9 +137,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
      * button onClick Listener
      *  1. sign in
      *  2. sign up
+     *  3. forget password
      * @param view
      */
-    @OnClick({R.id.email_sign_in_button, R.id.register_button})
+    @OnClick({R.id.email_sign_in_button, R.id.register_button, R.id.updatePassword_button})
     public void onViewClick(View view){
         switch (view.getId()){
             case R.id.email_sign_in_button:
@@ -150,6 +153,11 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
             case R.id.register_button:
                 Intent intent = new Intent(LoginActivity.this,UserActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.updatePassword_button:
+                Log.d(TAG,"register page!!!");
+                Intent intent2 = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

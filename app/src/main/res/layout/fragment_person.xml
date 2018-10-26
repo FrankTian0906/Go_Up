@@ -43,7 +43,8 @@
             android:enabled="false"
             android:background="@null"
             android:fontFamily="sans-serif-light"
-            android:text="Fei Tian"/>
+            android:text="Fei Tian"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/user_setting"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:id="@+id/timer_background"
+    android:background="@drawable/timer_bg_animation"
     tools:context=".FragmentTimer">
 
     <!-- TODO: Update blank fragment layout -->

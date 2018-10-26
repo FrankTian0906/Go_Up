@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentPie"
-    android:background="@drawable/side_nav_bar">
+    android:background="@drawable/login_background">
 
-    <com.github.mikephil.charting.charts.BarChart
+    <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
         android:layout_width="match_parent"
         android:layout_centerVertical="true"
         android:layout_height="400dp"
-        android:layout_below="@+id/imageButton_pieChart_left"></com.github.mikephil.charting.charts.BarChart>
+        android:layout_below="@+id/imageButton_pieChart_left"></com.github.mikephil.charting.charts.PieChart>
 
     <ImageButton
         android:layout_marginTop="40dp"
@@ -30,6 +30,18 @@
         android:layout_alignParentRight="true"
         android:background="@null"
         android:src="@android:drawable/ic_menu_send"/>
+
+    <TextView
+        android:id="@+id/textview_pie_date"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:text="DATE"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
 
     <RadioGroup
         android:layout_marginTop="15dp"
