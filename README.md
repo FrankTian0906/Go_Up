@@ -2,7 +2,7 @@
 
 ## New UI<br>
 
-Test DEMO: [link](https://drive.google.com/drive/u/0/folders/1nsSz134ay5mWEMFfMll2kyeadj6FA3on)
+Test DEMO: [link](https://drive.google.com/file/d/1Ftemb-AEU9hMp6muPLBq6ERln9dVi2At/view?usp=sharing)
 ### Sign in<br>
 
 <img src="https://github.com/FrankTian0906/Go_Up/raw/master/raw/master/images-folder/Screenshot_20181022-133612.png" width="300"> 
